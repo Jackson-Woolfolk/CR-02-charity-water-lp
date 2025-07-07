@@ -84,11 +84,45 @@ section {
   padding: 30px 20px;
 }
 
-/* Add accent color to section headings */
-h2 {
-  color: #2E9DF7; /* Primary blue */
+/* Center the 'Our Story' headline in the story section */
+.story-title {
+  text-align: center;
+  width: 100%;
   margin-top: 0;
-  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+/* Story Section: Place left image, text, and right image in a row */
+.story-content {
+  display: flex;           /* Place items in a row */
+  align-items: center;     /* Vertically center items */
+  justify-content: center; /* Center the group */
+  gap: 20px;               /* Space between items */
+}
+
+/* Group both images together and center them vertically */
+.story-images {
+  display: flex;           /* Place images side by side */
+  flex-direction: column;  /* Stack images vertically */
+  align-items: center;     /* Center images horizontally */
+  justify-content: center; /* Center images vertically */
+  gap: 12px;               /* Space between the two images */
+  margin-right: 24px;      /* Space between images and text */
+}
+
+/* Make the story images the same size and remove extra margin */
+.story-image {
+  width: 100px;            /* Set image width */
+  height: auto;            /* Keep aspect ratio */
+  border-radius: 8px;      /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10); /* Soft shadow */
+  margin: 0;               /* Remove margin */
+}
+
+/* Center the text and headline in the middle column */
+.story-text {
+  flex: 1;
+  text-align: center;      /* Center text for beginners */
 }
 
 /* Call-to-Action Section Styles */
@@ -176,6 +210,25 @@ section {
   .impact-image {
     width: 90%;    /* Make image take up most of the width */
     max-width: 220px;
+  }
+
+  /* On small screens, stack image above text in story section */
+  .story-content {
+    flex-direction: column; /* Stack items vertically */
+    text-align: center;
+    gap: 8px;
+  }
+  .story-images {
+    flex-direction: row;    /* Place images side by side on small screens */
+    margin-right: 0;
+    margin-bottom: 12px;
+    gap: 8px;
+  }
+  .story-image {
+    margin-bottom: 0;
+  }
+  .story-text {
+    text-align: center;
   }
 }
 
